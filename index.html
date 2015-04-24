@@ -1,0 +1,95 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script src='script.js'></script>
+    <title>電子計分板</title>
+    <script>
+        function getUrlParameter(sParam)
+        {
+            var sPageURL = window.location.search.substring(1);
+            var sURLVariables = sPageURL.split('&');
+            for (var i = 0; i < sURLVariables.length; i++) 
+            {
+                var sParameterName = sURLVariables[i].split('=');
+                if (sParameterName[0] == sParam) 
+                {
+                    return sParameterName[1];
+                }
+            }
+        }
+        
+    </script>
+    
+</head>
+<body>
+
+	<script>
+	    
+	    //location.href = "http://willyhu.koding.io/932028230170869/result.html?A="+ getUrlParameter('A');
+	    //location.href = "http://willyhu.koding.io/932028230170869/result.html?B="+ getUrlParameter('B');
+	    console.log("A:"+getUrlParameter('A'));
+	    console.log("B:"+getUrlParameter('B'));
+	</script>
+	<h1 align="center">電子計分板</h1>
+    <div id="main">
+        <div id="A-team">
+        <div id="A-img">R</div>
+        <div id="A-point">0</div>
+    </div>
+
+    <div id="B-team">
+        <div id="B-img">B</div>
+        <div id="B-point">0</div>
+    </div>
+    
+    <div id="Time-out">
+        <div id="out-A5" class="outA"></div>
+        <div id="out-A4" class="outA"></div>
+        <div id="out-A3" class="outA"></div>
+        <div id="out-A2" class="outA"></div>
+        <div id="out-A1" class="outA"></div>
+        <div id="out-A0" class="outA"></div>
+        <div id="out-B5" class="outB"></div>
+        <div id="out-B4" class="outB"></div>
+        <div id="out-B3" class="outB"></div>
+        <div id="out-B2" class="outB"></div>
+        <div id="out-B1" class="outB"></div>
+        <div id="out-B0" class="outB"></div>
+    </div>
+    
+    <div id="Round"><span id="rdnum">1</span><span id="rd">RD</span></div>
+        <div id="Quarter"><span id="Q1">0</span>
+        :
+        <span id="Q2">00</span>
+        </div>
+        <div id="Shot-clock">24</div>
+    </div>
+    
+    <br><br>
+    
+    <div id="but">
+        LEFT:
+        <input type="button" value="2-point" id="APB">
+        <input type="button" value="3-point" id="LAPB"><br><br>
+        RIGHT:
+        <input type="button" value="2-point" id="BPB">
+        <input type="button" value="3-point" id="LBPB"><br><br>
+        Round--:
+        <input type="button" value="RDUP" id="XRD">
+        <input type="button" value="RDDOWN" id="LRD"><br><br>
+        Quarter:
+        <input type="Button" id="abc" value="start" onClick="SW()">
+        <input type="Button" id="sc" value="stop" onClick="stop()"><br><br>
+        Time-out:
+        <input type="button" value="A" id="AT">
+        <input type="button" value="B" id="BT"><br><br>
+        Shot-clock:
+        <input type="Button" id="STCK" value="start" onClick="SSW()">
+        <input type="Button" id="Ssc" value="stop" onClick="Sstop()"><br><br>
+    </div>
+</body>
+
+</html>
